@@ -1,11 +1,10 @@
 #include <iostream>
+#include "template_method.h"
 
-#include "./src/templatemothod/template_method.cpp"
-
-int main(int, char **)
+int main()
 {
-    AbstractClass *obj = new ConcreteClass();
-    obj->template_method();
-
+    AbstractClass *con = new ConcreteClass();
+    con->template_method();
+    std::cout << "hello world" << std::endl;
     return 0;
 }
