@@ -10,3 +10,4 @@ learn design pattern via cpp
 
 ## Summary
 * template method
+* strategy
