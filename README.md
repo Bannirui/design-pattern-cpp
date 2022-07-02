@@ -9,5 +9,7 @@ learn design pattern via cpp
 * 紧耦合 -> 松耦合
 
 ## Summary
-* template method
-* strategy
+* 模板方法
+* 策略模式
+* 观察者模式
+* 装饰模式

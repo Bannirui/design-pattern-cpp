@@ -2,6 +2,7 @@
 #include "template_method.h"
 #include "strategy.h"
 #include "observer.h"
+#include "decorator.cpp"
 
 int main()
 {
@@ -37,6 +38,20 @@ int main()
     delete observer2;
     delete observer1;
     delete subject;
+
+    // 装饰模式
+    Component *simple = new ConcreteComponent();
+    std::cout << "Client: i've got a simple component" << std::endl;
+    decoratorClient(simple);
+    Component *decorator1 = new ConcreteDecoratorA(simple);
+    Component *decorator2 = new ConcreteDecoratorB(simple);
+    std::cout << "Client: i've got a decorated component" << std::endl;
+    decoratorClient(decorator1);
+    std::cout << "Client: i've got a decorated component" << std::endl;
+    decoratorClient(decorator2);
+    delete simple;
+    delete decorator1;
+    delete decorator2;
 
     return 0;
 }
