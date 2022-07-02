@@ -3,6 +3,7 @@
 #include "strategy.h"
 #include "observer.h"
 #include "decorator.cpp"
+#include "abstract_factory.cpp"
 
 int main()
 {
@@ -52,6 +53,16 @@ int main()
     delete simple;
     delete decorator1;
     delete decorator2;
+
+    // 抽象工厂
+    std::cout << "Client: Testing client code with the first factory type" << std::endl;
+    ConcreteFactory1 *f1 = new ConcreteFactory1();
+    clientCode(*f1);
+    delete f1;
+    std::cout << "Client: Testing client same client code with the second factory type" << std::endl;
+    ConcreteFactory2 *f2 = new ConcreteFactory2();
+    clientCode(*f2);
+    delete f2;
 
     return 0;
 }
