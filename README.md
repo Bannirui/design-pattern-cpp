@@ -13,7 +13,7 @@ learn design pattern via cpp
 - [X] 抽象工厂
 - [X] 生成器
 - [X] 工厂方法
-- [ ] 原型
+- [X] 原型
 - [ ] 单例
 
 * 结构型模式

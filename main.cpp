@@ -6,6 +6,7 @@
 #include "abstract_factory.cpp"
 #include "builder.cpp"
 #include "factory_method.cpp"
+#include "prototype.cpp"
 
 int main()
 {
@@ -80,5 +81,10 @@ int main()
     Creator *creator2 = new ConcreteCreator2;
     client_code(*creator2);
     delete creator2;
+
+    // 原型
+    PrototypeFactory *prototype_factory = new PrototypeFactory;
+    client(*prototype_factory);
+    delete prototype_factory;
     return 0;
 }
