@@ -11,7 +11,7 @@ learn design pattern via cpp
 ## Summary
 * 创建型模式
 - [X] 抽象工厂
-- [ ] 生成器
+- [X] 生成器
 - [ ] 工厂方法
 - [ ] 原型
 - [ ] 单例

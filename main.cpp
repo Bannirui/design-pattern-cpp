@@ -4,6 +4,7 @@
 #include "observer.h"
 #include "decorator.cpp"
 #include "abstract_factory.cpp"
+#include "builder.cpp"
 
 int main()
 {
@@ -63,6 +64,11 @@ int main()
     ConcreteFactory2 *f2 = new ConcreteFactory2();
     clientCode(*f2);
     delete f2;
+
+    // 生成器模式
+    Director *director = new Director;
+    client_code(*director);
+    delete director;
 
     return 0;
 }
