@@ -14,7 +14,7 @@ learn design pattern via cpp
 - [X] 生成器
 - [X] 工厂方法
 - [X] 原型
-- [ ] 单例
+- [X] 单例
 
 * 结构型模式
 - [ ] 适配器

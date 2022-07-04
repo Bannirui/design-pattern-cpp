@@ -7,6 +7,7 @@
 #include "builder.cpp"
 #include "factory_method.cpp"
 #include "prototype.cpp"
+#include "singleton.cpp"
 
 int main()
 {
@@ -86,5 +87,12 @@ int main()
     PrototypeFactory *prototype_factory = new PrototypeFactory;
     client(*prototype_factory);
     delete prototype_factory;
+
+    // 单例
+    std::cout << "singleton" << std::endl;
+    std::thread t1(thread_foo);
+    std::thread t2(thread_bar);
+    t1.join();
+    t2.join();
     return 0;
 }
