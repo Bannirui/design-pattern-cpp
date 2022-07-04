@@ -5,6 +5,7 @@
 #include "decorator.cpp"
 #include "abstract_factory.cpp"
 #include "builder.cpp"
+#include "factory_method.cpp"
 
 int main()
 {
@@ -70,5 +71,14 @@ int main()
     client_code(*director);
     delete director;
 
+    // 工厂模式
+    std::cout << "App: Launched with the ConcreteCreator1" << std::endl;
+    Creator *creator1 = new ConcreteCreator1;
+    client_code(*creator1);
+    delete creator1;
+    std::cout << "App: Launched with the ConcreteCreator2" << std::endl;
+    Creator *creator2 = new ConcreteCreator2;
+    client_code(*creator2);
+    delete creator2;
     return 0;
 }
