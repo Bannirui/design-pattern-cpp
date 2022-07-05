@@ -20,6 +20,7 @@
 #include "mediator.cpp" // 中介者
 #include "memento.cpp" // 备忘录
 #include "state.cpp" // 状态
+#include "visitor.cpp" // 访问者
 
 int main()
 {
@@ -226,5 +227,14 @@ int main()
 
     // 状态
     STATE::client_code();
+
+    // 访问者
+    std::array<const VISITOR::Component *, 2> components = {new VISITOR::ConcreteComponentA,
+                                                            new VISITOR::ConcreteComponentB};
+    std::cout << "the client code works with all visitors via the base visitor interface" << std::endl;
+    VISITOR::ConcreteVisitor1 *visitor1 = new VISITOR::ConcreteVisitor1;
+    VISITOR::client_code(components, visitor1);
+    VISITOR::ConcreteVisitor2 *visitor2 = new VISITOR::ConcreteVisitor2;
+    VISITOR::client_code(components, visitor2);
     return 0;
 }

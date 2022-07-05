@@ -41,4 +41,4 @@ learn design pattern via cpp
 - [X] 中介者
 - [X] 观察者
 - [X] 策略
-- [ ] 访问者
+- [X] 访问者
