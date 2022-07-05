@@ -16,6 +16,7 @@
 #include "proxy.cpp" // 代理
 #include "chain.cpp" // 责任链
 #include "command.cpp" // 命令
+#include "iterator.cpp" // 迭代器
 
 int main()
 {
@@ -210,6 +211,7 @@ int main()
     delete invoker;
     delete receiver;
 
-
+    // 迭代器
+    ITERATOR::client_code();
     return 0;
 }
