@@ -27,7 +27,7 @@ learn design pattern via cpp
 - [X] 组合
 - [X] 装饰
 - [X] 外观
-- [ ] 享元
+- [X] 享元
 - [ ] 代理
 
 * 行为型模式

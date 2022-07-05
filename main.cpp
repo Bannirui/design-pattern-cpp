@@ -12,6 +12,7 @@
 #include "bridge.cpp" // 桥接
 #include "composite.cpp" // 组合
 #include "facade.cpp" // 外观
+#include "share.cpp" // 享元
 
 int main()
 {
@@ -156,8 +157,21 @@ int main()
     // 外观
     FACADE::Subsystem1 *subsystem1 = new FACADE::Subsystem1;
     FACADE::Subsystem2 *subsystem2 = new FACADE::Subsystem2;
-    FACADE::Facade* facade = new FACADE::Facade(subsystem1, subsystem2);
+    FACADE::Facade *facade = new FACADE::Facade(subsystem1, subsystem2);
     FACADE::client_code(facade);
     delete facade;
+
+    // 享元
+    SHARE::FlyweightFactory *factory = new SHARE::FlyweightFactory({{"Chevrolet",     "Camaro2018", "pink"},
+                                                                    {"Mercedes Benz", "C300",       "black"},
+                                                                    {"Mercedes Benz", "C500",       "red"},
+                                                                    {"BMW",           "M5",         "red"},
+                                                                    {"BMW",           "x6",         "white"}});
+    factory->list_flyweights();
+    SHARE::add_car_to_police_database(*factory, "CL234", "James Doe", "BMW", "M5", "red");
+    SHARE::add_car_to_police_database(*factory, "CL235", "James Doe", "BMW", "x1", "red");
+    factory->list_flyweights();
+    delete factory;
+
     return 0;
 }
