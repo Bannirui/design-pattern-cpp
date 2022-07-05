@@ -10,6 +10,7 @@
 #include "singleton.cpp" // 单例
 #include "adapter.cpp" // 适配器
 #include "bridge.cpp" // 桥接
+#include "composite.cpp" // 组合
 
 int main()
 {
@@ -121,5 +122,34 @@ int main()
     delete implementationB;
     delete abstraction;
 
+    // 组合
+    COMPOSITE::Component *leaf = new COMPOSITE::Leaf;
+    std::cout << "client: i've got a simple component" << std::endl;
+    COMPOSITE::client_code_1(leaf);
+
+    COMPOSITE::Component *tree = new COMPOSITE::Composite;
+    COMPOSITE::Component *branch1 = new COMPOSITE::Composite;
+    COMPOSITE::Component *leaf_1 = new COMPOSITE::Leaf;
+    COMPOSITE::Component *leaf_2 = new COMPOSITE::Leaf;
+    COMPOSITE::Component *leaf_3 = new COMPOSITE::Leaf;
+    branch1->add(leaf_1);
+    branch1->add(leaf_2);
+    COMPOSITE::Component *branch2 = new COMPOSITE::Composite;
+    branch2->add(leaf_3);
+    tree->add(branch1);
+    tree->add(branch2);
+    std::cout << "client: now i've got a composite tree" << std::endl;
+    COMPOSITE::client_code_1(tree);
+
+    std::cout << "client: i don't need to check the components classes even when managing the tree" << std::endl;
+    COMPOSITE::client_code_2(tree, leaf);
+
+    delete leaf;
+    delete tree;
+    delete branch1;
+    delete branch2;
+    delete leaf_1;
+    delete leaf_2;
+    delete leaf_3;
     return 0;
 }

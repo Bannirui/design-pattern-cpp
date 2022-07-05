@@ -19,7 +19,7 @@ learn design pattern via cpp
 * 结构型模式
 - [X] 适配器
 - [X] 桥接
-- [ ] 组合
+- [X] 组合
 - [X] 装饰
 - [ ] 外观
 - [ ] 享元
