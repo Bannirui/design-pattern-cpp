@@ -32,7 +32,7 @@ learn design pattern via cpp
 
 * 行为型模式
 
-- [ ] 责任链
+- [X] 责任链
 - [ ] 迭代器
 - [ ] 备忘录
 - [ ] 状态

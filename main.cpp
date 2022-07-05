@@ -14,6 +14,7 @@
 #include "facade.cpp" // 外观
 #include "share.cpp" // 享元
 #include "proxy.cpp" // 代理
+#include "chain.cpp" // 责任链
 
 int main()
 {
@@ -184,6 +185,19 @@ int main()
     PROXY::client_code(*proxy);
     delete real_subject;
     delete proxy;
+
+    // 责任链
+    CHAIN::MonkeyHandler *monkey = new CHAIN::MonkeyHandler;
+    CHAIN::SquirrelHandler *squirrel = new CHAIN::SquirrelHandler;
+    CHAIN::DogHandler *dog = new CHAIN::DogHandler;
+    monkey->set_next(squirrel)->set_next(dog);
+    std::cout << "chain: monkey->squirrel->dog" << std::endl;
+    CHAIN::client_code(*monkey);
+    std::cout << "sub chain: squirrel->dog" << std::endl;
+    CHAIN::client_code(*squirrel);
+    delete monkey;
+    delete squirrel;
+    delete dog;
 
     return 0;
 }
