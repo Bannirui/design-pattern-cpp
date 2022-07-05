@@ -19,6 +19,7 @@
 #include "iterator.cpp" // 迭代器
 #include "mediator.cpp" // 中介者
 #include "memento.cpp" // 备忘录
+#include "state.cpp" // 状态
 
 int main()
 {
@@ -222,5 +223,8 @@ int main()
     // 备忘录
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     MEMENTO::client_code();
+
+    // 状态
+    STATE::client_code();
     return 0;
 }
