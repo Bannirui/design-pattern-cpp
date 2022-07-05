@@ -13,6 +13,7 @@
 #include "composite.cpp" // 组合
 #include "facade.cpp" // 外观
 #include "share.cpp" // 享元
+#include "proxy.cpp" // 代理
 
 int main()
 {
@@ -172,6 +173,17 @@ int main()
     SHARE::add_car_to_police_database(*factory, "CL235", "James Doe", "BMW", "x1", "red");
     factory->list_flyweights();
     delete factory;
+
+    // 代理
+    std::cout << "client: executing the client code with a real subject" << std::endl;
+    PROXY::RealSubject *real_subject = new PROXY::RealSubject;
+    PROXY::client_code(*real_subject);
+
+    std::cout << "client: executing the same client code with a proxy" << std::endl;
+    PROXY::Proxy *proxy = new PROXY::Proxy(real_subject);
+    PROXY::client_code(*proxy);
+    delete real_subject;
+    delete proxy;
 
     return 0;
 }
