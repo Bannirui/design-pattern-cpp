@@ -17,6 +17,7 @@
 #include "chain.cpp" // 责任链
 #include "command.cpp" // 命令
 #include "iterator.cpp" // 迭代器
+#include "mediator.cpp" // 中介者
 
 int main()
 {
@@ -213,5 +214,8 @@ int main()
 
     // 迭代器
     ITERATOR::client_code();
+
+    // 中介者
+    MEDIATOR::client_code();
     return 0;
 }
