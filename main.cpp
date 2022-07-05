@@ -1,14 +1,15 @@
 #include <iostream>
-#include "template_method.h"
-#include "strategy.h"
-#include "observer.h"
-#include "decorator.cpp"
-#include "abstract_factory.cpp"
-#include "builder.cpp"
-#include "factory_method.cpp"
-#include "prototype.cpp"
-#include "singleton.cpp"
-#include "adapter.cpp"
+#include "template_method.h" // 模板方法
+#include "strategy.h" // 策略
+#include "observer.h" // 观察者
+#include "decorator.cpp" // 装饰器
+#include "abstract_factory.cpp" // 抽象工厂
+#include "builder.cpp" // 生成器
+#include "factory_method.cpp" // 工厂方法
+#include "prototype.cpp" // 原型
+#include "singleton.cpp" // 单例
+#include "adapter.cpp" // 适配器
+#include "bridge.cpp" // 桥接
 
 int main()
 {
@@ -106,5 +107,19 @@ int main()
     client_code(adapter);
     delete adaptee;
     delete adapter;
+
+    // 桥接
+    Implementation *implementationA = new ConcreteImplementationA;
+    Abstraction *abstraction = new Abstraction(implementationA);
+    client_code(*abstraction);
+    delete implementationA;
+    delete abstraction;
+
+    Implementation *implementationB = new ConcreteImplementationB;
+    abstraction = new ExtendAbstraction(implementationB);
+    client_code(*abstraction);
+    delete implementationB;
+    delete abstraction;
+
     return 0;
 }
