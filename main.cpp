@@ -15,6 +15,7 @@
 #include "share.cpp" // 享元
 #include "proxy.cpp" // 代理
 #include "chain.cpp" // 责任链
+#include "command.cpp" // 命令
 
 int main()
 {
@@ -198,6 +199,17 @@ int main()
     delete monkey;
     delete squirrel;
     delete dog;
+
+    // 命令
+    COMMAND::Invoker *invoker = new COMMAND::Invoker;
+    invoker->set_on_start(new COMMAND::SimpleCommand("say hi"));
+    COMMAND::Receiver *receiver = new COMMAND::Receiver;
+    invoker->set_on_finish(new COMMAND::ComplexCommand(receiver, "send email", "save report"));
+    invoker->do_sth_important();
+
+    delete invoker;
+    delete receiver;
+
 
     return 0;
 }

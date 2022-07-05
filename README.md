@@ -37,7 +37,7 @@ learn design pattern via cpp
 - [ ] 备忘录
 - [ ] 状态
 - [X] 模板方法
-- [ ] 命令
+- [X] 命令
 - [ ] 中介者
 - [X] 观察者
 - [X] 策略
