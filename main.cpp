@@ -8,6 +8,7 @@
 #include "factory_method.cpp"
 #include "prototype.cpp"
 #include "singleton.cpp"
+#include "adapter.cpp"
 
 int main()
 {
@@ -94,5 +95,16 @@ int main()
     std::thread t2(thread_bar);
     t1.join();
     t2.join();
+
+    // 适配器
+    std::cout << "client: i can work just fine with the target objects" << std::endl;
+    Target *target = new Target;
+    client_code(target);
+    delete target;
+    Adaptee *adaptee = new Adaptee;
+    Adapter *adapter = new Adapter(adaptee);
+    client_code(adapter);
+    delete adaptee;
+    delete adapter;
     return 0;
 }

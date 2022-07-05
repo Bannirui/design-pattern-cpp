@@ -17,7 +17,7 @@ learn design pattern via cpp
 - [X] 单例
 
 * 结构型模式
-- [ ] 适配器
+- [X] 适配器
 - [ ] 桥接
 - [ ] 组合
 - [X] 装饰
