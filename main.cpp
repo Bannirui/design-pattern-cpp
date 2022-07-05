@@ -18,6 +18,7 @@
 #include "command.cpp" // 命令
 #include "iterator.cpp" // 迭代器
 #include "mediator.cpp" // 中介者
+#include "memento.cpp" // 备忘录
 
 int main()
 {
@@ -216,6 +217,10 @@ int main()
     ITERATOR::client_code();
 
     // 中介者
-    MEDIATOR::client_code();
+    // MEDIATOR::client_code();
+
+    // 备忘录
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    MEMENTO::client_code();
     return 0;
 }

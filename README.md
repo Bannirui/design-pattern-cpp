@@ -34,7 +34,7 @@ learn design pattern via cpp
 
 - [X] 责任链
 - [X] 迭代器
-- [ ] 备忘录
+- [X] 备忘录
 - [ ] 状态
 - [X] 模板方法
 - [X] 命令
