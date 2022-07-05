@@ -1,7 +1,9 @@
 # design-pattern-cpp
+
 learn design pattern via cpp
 
 ## keypoints
+
 * 静态 -> 动态
 * 早绑定 -> 晚绑定
 * 继承 -> 组合
@@ -9,7 +11,9 @@ learn design pattern via cpp
 * 紧耦合 -> 松耦合
 
 ## Summary
+
 * 创建型模式
+
 - [X] 抽象工厂
 - [X] 生成器
 - [X] 工厂方法
@@ -17,15 +21,17 @@ learn design pattern via cpp
 - [X] 单例
 
 * 结构型模式
+
 - [X] 适配器
 - [X] 桥接
 - [X] 组合
 - [X] 装饰
-- [ ] 外观
+- [X] 外观
 - [ ] 享元
 - [ ] 代理
 
 * 行为型模式
+
 - [ ] 责任链
 - [ ] 迭代器
 - [ ] 备忘录

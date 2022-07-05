@@ -11,6 +11,7 @@
 #include "adapter.cpp" // 适配器
 #include "bridge.cpp" // 桥接
 #include "composite.cpp" // 组合
+#include "facade.cpp" // 外观
 
 int main()
 {
@@ -151,5 +152,12 @@ int main()
     delete leaf_1;
     delete leaf_2;
     delete leaf_3;
+
+    // 外观
+    FACADE::Subsystem1 *subsystem1 = new FACADE::Subsystem1;
+    FACADE::Subsystem2 *subsystem2 = new FACADE::Subsystem2;
+    FACADE::Facade* facade = new FACADE::Facade(subsystem1, subsystem2);
+    FACADE::client_code(facade);
+    delete facade;
     return 0;
 }
